@@ -1,33 +1,26 @@
 $(document).ready(function(){
 
-    $("#search-button").on("click", function(){
-        var searchValue = $("#search-value").val();
-
-    $("#search-value").val("");
-    searchWeather(searchValue)
-});
+$("#search-button").on("click", function(){
+var searchValue = $("search-value").val();
 
 
-    function searchWeather(searchValue) {
-        $.ajax({
-            type: "GET",
-            url://my api key + searchValue + rest of api key,
-            dataType: "json", 
-        }).then(function(data) {
-            console.log(data)
-            //create a history link for the search (look up .push())
-            // creating a card for appending weather data
-            var title = $("<h3>").addClass(card-title).text(data.name);
-            var card = $("<div>").addClass("card");
-           
+$("#search-value").val("");
+
+searchWeather(searchValue)
+})
 
 
+function searchWeather(searchValue) {
+    $.ajax({
+        type: "GET",
+        url: "api.openweathermap.org/data/2.5/weather?q" + searchValue + "&appid=d612a9005a39f85f6f494b070e6e3182&units=imperial",
+        dataType: "json",
+    }).then(function(data) {
+console.log(data)
+}
 
-    }
 
+)}
 
-
-        )}
-    
 
 });
