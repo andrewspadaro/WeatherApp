@@ -22,6 +22,10 @@ $(document).ready(function () {
             getUvIndex(data.coord.lon, data.coord.lat)
 
             // todo: create html using jquery and inject theese variables
+
+            $(".temp").text(`Temperature: ${data.main.temp}`);
+            $(".humid").text(`Humidity: ${data.main.humidity}`);
+            $(".wind").text(`Wind Speed: ${data.wind.speed}`);
         })
     }
 
