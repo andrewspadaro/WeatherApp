@@ -38,6 +38,9 @@ $(document).ready(function () {
         }).then(function (data) {
            console.log(data)
            // create html to display
+
+           $(".uv").text(`UV Index: ${data.value}`);
+
         })
 
     }
